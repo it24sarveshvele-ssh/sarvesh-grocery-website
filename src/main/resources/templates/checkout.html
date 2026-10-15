@@ -1,0 +1,76 @@
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FreshMart</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7f2;
+            color: #333;
+        }
+        header {
+            background: #218838;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px #00000015;
+        }
+        h2 { color: #218838; }
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+        button {
+            background: #218838;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background: #176b2c; }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FreshMart</h1>
+        <p>Secure Checkout</p>
+    </header>
+
+    <div class="container">
+        <h2>Review Your Order</h2>
+        <p>Please confirm your order total.</p>
+
+        <div class="total">
+            Total: ₹<span th:text="${total}">0</span>
+        </div>
+
+        <form action="/checkout" method="post">
+            <button type="submit">Place Order</button>
+        </form>
+
+        <a href="/cart">Back to Cart</a>
+    </div>
+</body>
+</html>
+
+
